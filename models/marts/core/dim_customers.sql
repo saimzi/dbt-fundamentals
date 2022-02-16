@@ -24,7 +24,9 @@ customer_orders as (
     group by 1
 
 ),
-
+payments as (
+    select amount from {{ref('stg_payments')}}
+)
 final as (
 
     select
@@ -33,11 +35,15 @@ final as (
         customers.last_name,
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
-        coalesce(customer_orders.number_of_orders, 0) as number_of_orders
+        coalesce(customer_orders.number_of_orders, 0) as number_of_orders, 
+        sum(payments.amount) as  lifetime_value
+
+        group by 1
 
     from customers
 
     left join customer_orders using (customer_id)
+    left join payments using(customer_id)
 
 )
 
