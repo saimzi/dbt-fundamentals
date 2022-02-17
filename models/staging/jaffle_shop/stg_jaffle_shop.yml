@@ -14,7 +14,7 @@ models:
     description: Order model
     columns:
       - name: order_id
-        description : the primary key of an order
+        description: the primary key of an order
         tests:
           - unique
           - not_null
