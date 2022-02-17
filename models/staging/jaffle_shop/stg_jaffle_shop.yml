@@ -2,19 +2,19 @@ version: 2
 
 models:
   - name: stg_customers
-    description: customer Model
+    description: customer Model.
     columns: 
       - name: customer_id
-        description : the primary key of the customer
+        description : the primary key of the customer.
         tests:
           - unique
           - not_null
 
   - name: stg_orders 
-    description: Order model
+    description: Order model.
     columns:
       - name: order_id
-        description: the primary key of an order
+        description: the primary key of an order.
         tests:
           - unique
           - not_null
