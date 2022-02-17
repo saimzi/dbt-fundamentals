@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_customers
-    description :  customer Model
+    description:  customer Model
     columns: 
       - name: customer_id
         description : the primary key of the customer
@@ -11,7 +11,7 @@ models:
           - not_null
 
   - name: stg_orders 
-    description : order model
+    description: order model
     columns:
       - name: order_id
         description : the primary key of an order
